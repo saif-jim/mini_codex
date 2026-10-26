@@ -1,0 +1,80 @@
+{
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "write_file",
+        "description": "Create a new file or overwrite an existing one with the specified content, ensuring the directory exists.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Absolute or relative directory path where the file will be stored. Existing sub‑directories will be created if necessary."
+            },
+            "filename": {
+              "type": "string",
+              "description": "Name of the file, including its extension (e.g., main.py, config.json)."
+            },
+            "content": {
+              "type": "string",
+              "description": "The full text content to write to the file."
+            }
+          },
+          "required": ["path", "filename", "content"],
+          "additionalProperties": false
+        },
+        "strict": true,
+        "example": {
+          "path": "/home/user/projects",
+          "filename": "hello.txt",
+          "content": "Hello, world!"
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "read_file",
+        "description": "Retrieve the full text content of a file located at the specified path.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Absolute or relative path to the target file."
+            }
+          },
+          "required": ["path"],
+          "additionalProperties": false
+        },
+        "strict": true,
+        "example": {
+          "path": "/home/user/projects/hello.txt"
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "run_command",
+        "description": "Execute an arbitrary shell command and return its stdout, stderr, and exit code.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "type": "string",
+              "description": "The full shell command to run, e.g., \"ls -l\"."
+            }
+          },
+          "required": ["command"],
+          "additionalProperties": false
+        },
+        "strict": true,
+        "example": {
+          "command": "python --version"
+        }
+      }
+    }
+  ]
+}
