@@ -12,8 +12,12 @@ wheels/
 
 *.egg-info
 
+src/coding_agent/__init__.py
+
+
 # Virtual environments
 .venv
 
 # Environment variable
 .env
+src/coding_agent/__init__.py
